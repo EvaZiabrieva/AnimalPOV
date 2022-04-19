@@ -10,7 +10,7 @@ namespace AnimalPOV
         }
         public bool IsTryJump()
         {
-            return Input.GetKeyDown("space");
+            return Input.GetKeyDown(KeyCode.Space);
         }
         public float GetRotation()
         {
