@@ -6,7 +6,7 @@ namespace AnimalPOV
     {
         public float GetForwardMovement()
         {
-            return Input.GetAxis("Horizontal");
+            return Input.GetAxis("Vertical");
         }
         public bool IsTryJump()
         {
@@ -14,7 +14,7 @@ namespace AnimalPOV
         }
         public float GetRotation()
         {
-            return Input.GetAxis("Vertical");
+            return Input.GetAxis("Horizontal");
         }
     }
 }
