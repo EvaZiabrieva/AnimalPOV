@@ -5,6 +5,7 @@ namespace AnimalPOV
     public class MovementController : MonoBehaviour
     {
         [SerializeField] private MovementParameters movementParameters;
+        [SerializeField] private LayerMask raycastMask;
         private float horizontalRotation;
         private IInputProvider inputProvider = new InputProvider();
 
@@ -12,7 +13,7 @@ namespace AnimalPOV
         {
             RaycastHit hit;
             Ray ray = new Ray(transform.position + Vector3.up * 0.05f, Vector3.down);
-            if (Physics.Raycast(ray, out hit, 0.1f))
+            if (Physics.Raycast(ray, out hit, 0.1f, raycastMask))
                 transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
             else
                 transform.rotation = Quaternion.identity;
