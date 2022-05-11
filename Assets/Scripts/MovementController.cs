@@ -8,6 +8,7 @@ namespace AnimalPOV
         [SerializeField] private LayerMask raycastMask;
         private float horizontalRotation;
         private IInputProvider inputProvider = new InputProvider();
+        public Rigidbody rb;
 
         private void Update()
         {
@@ -28,6 +29,10 @@ namespace AnimalPOV
             targetRotation *= Quaternion.Euler(0, horizontalRotation, 0);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
             transform.position += targetRotation * new Vector3(horizontalMovement, 0f, 0f);
+
+
+            if(inputProvider.IsTryJump())
+                rb.AddForce(new Vector3(0, movementParameters.JumpForce, 0), ForceMode.Impulse);
         }
     }
 }

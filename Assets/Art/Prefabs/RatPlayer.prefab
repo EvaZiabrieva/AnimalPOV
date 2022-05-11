@@ -134,11 +134,12 @@ MonoBehaviour:
   movementParameters:
     movementSpeed: 1
     rotationSpeed: 90
-    jumpForce: 10
+    jumpForce: 3
     maxAngle: 80
   raycastMask:
     serializedVersion: 2
     m_Bits: 55
+  rb: {fileID: 1868480779}
 --- !u!54 &1868480779
 Rigidbody:
   m_ObjectHideFlags: 0
