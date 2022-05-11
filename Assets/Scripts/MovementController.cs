@@ -12,13 +12,17 @@ namespace AnimalPOV
 
         private void Update()
         {
+            bool isGrounded = true;
             RaycastHit hit;
             Ray ray = new Ray(transform.position + Vector3.up * 0.05f, Vector3.down);
             Quaternion targetRotation;
             if (Physics.Raycast(ray, out hit, 0.1f, raycastMask))
                 targetRotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
             else
+            {
                 targetRotation = Quaternion.identity;
+                isGrounded = false;
+            }
             
 
             float angle = Vector3.Angle(Vector3.up, hit.normal);
@@ -31,7 +35,7 @@ namespace AnimalPOV
             transform.position += targetRotation * new Vector3(horizontalMovement, 0f, 0f);
 
 
-            if(inputProvider.IsTryJump())
+            if(inputProvider.IsTryJump() && isGrounded)
                 rb.AddForce(new Vector3(0, movementParameters.JumpForce, 0), ForceMode.Impulse);
         }
     }

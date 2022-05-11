@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementParameters:
     movementSpeed: 1
-    rotationSpeed: 90
+    rotationSpeed: 200
     jumpForce: 3
     maxAngle: 80
   raycastMask:
