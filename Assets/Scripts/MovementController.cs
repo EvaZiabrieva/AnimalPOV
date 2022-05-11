@@ -16,13 +16,6 @@ namespace AnimalPOV
         public event Action Run;
         public event Action Jump;
 
-        private void Awake()
-        {
-            Idle += () => Debug.Log("Idle");
-            Run += () => Debug.Log("Run");
-            Jump += () => Debug.Log("Jump");
-        }
-
         private void Update()
         {
             bool isGrounded = true;
