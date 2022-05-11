@@ -6,9 +6,9 @@ namespace AnimalPOV
     {
         [SerializeField] private MovementParameters movementParameters;
         [SerializeField] private LayerMask raycastMask;
+        [SerializeField] private new Rigidbody rigidbody;
         private float horizontalRotation;
         private IInputProvider inputProvider = new InputProvider();
-        public Rigidbody rb;
 
         private void Update()
         {
@@ -35,8 +35,8 @@ namespace AnimalPOV
             transform.position += targetRotation * new Vector3(horizontalMovement, 0f, 0f);
 
 
-            if(inputProvider.IsTryJump() && isGrounded)
-                rb.AddForce(new Vector3(0, movementParameters.JumpForce, 0), ForceMode.Impulse);
+            if (inputProvider.IsTryJump() && isGrounded)
+                rigidbody.AddForce(new Vector3(0, movementParameters.JumpForce, 0), ForceMode.Impulse);
         }
     }
 }
