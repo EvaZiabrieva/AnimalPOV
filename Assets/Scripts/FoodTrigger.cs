@@ -1,17 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace AnimalPOV
 {
     public class FoodTrigger : MonoBehaviour, IEffectsModificator
     {
-        private Collider foodCollider;
-
         public float SpeedModificator { get; private set; } = 1f;
-
         public float JumpModificator { get; private set; } = 1f;
+
         private float timer;
+        private Collider foodCollider;
 
         private void OnTriggerEnter(Collider other)
         {
@@ -26,6 +23,7 @@ namespace AnimalPOV
         {
             timer -= Time.deltaTime;
 
+            // TODO: move input handling to interface
             if (foodCollider != null && Input.GetKeyDown(KeyCode.E))
             {
                 FoodEffects foodEffects = foodCollider.GetComponent<FoodEffects>();
