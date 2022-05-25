@@ -93,10 +93,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5789129454666466050}
   - component: {fileID: 392072467}
+  - component: {fileID: 4427347418314977449}
+  - component: {fileID: 4343719816728337260}
   - component: {fileID: 1868480779}
   - component: {fileID: 1868480778}
   - component: {fileID: 1868480780}
-  - component: {fileID: 4343719816728337260}
   m_Layer: 6
   m_Name: RatPlayer
   m_TagString: Untagged
@@ -132,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f87d945d68fd941b7c46d5f1fd43f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foodTrigger: {fileID: 4427347418314977449}
   movementParameters:
     movementSpeed: 1
     rotationSpeed: 200
@@ -141,6 +143,31 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   rigidbody: {fileID: 1868480779}
+--- !u!114 &4427347418314977449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8286094245494358130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3c546a93a994d42b0fe48d2451212d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4343719816728337260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8286094245494358130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69d9a42585a11f640a2063ea8acc0d61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3334015433618553318}
 --- !u!54 &1868480779
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -184,19 +211,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.03
   m_Center: {x: 0, y: 0.03, z: 0}
---- !u!114 &4343719816728337260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8286094245494358130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69d9a42585a11f640a2063ea8acc0d61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 3334015433618553318}
 --- !u!1001 &7362995128454479804
 PrefabInstance:
   m_ObjectHideFlags: 0
