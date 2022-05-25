@@ -10,7 +10,7 @@ namespace AnimalPOV
         [SerializeField] private new Rigidbody rigidbody;
         private float horizontalRotation;
         private MovementState movementState;
-        private IInputProvider inputProvider = new InputProvider();
+        private IMovementInputProvider inputProvider = new MovementInputProvider();
 
         public event Action Idle;
         public event Action Run;

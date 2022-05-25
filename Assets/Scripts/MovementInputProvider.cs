@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace AnimalPOV
 {
-    public class InputProvider : IInputProvider
+    public class MovementInputProvider : IMovementInputProvider
     {
         public float GetForwardMovement()
         {
