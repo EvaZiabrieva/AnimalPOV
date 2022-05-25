@@ -6,6 +6,7 @@ namespace AnimalPOV
     {
         public float SpeedModificator { get; private set; } = 1f;
         public float JumpModificator { get; private set; } = 1f;
+        public float Saturation { get; private set; } = 0f;
 
         private float timer;
         private Collider foodCollider;
@@ -31,6 +32,7 @@ namespace AnimalPOV
                 SpeedModificator = foodEffects.SpeedModificator;
                 JumpModificator = foodEffects.JumpModificator;
                 timer = foodEffects.Duration;
+                Saturation = Mathf.Clamp01(Saturation + foodEffects.Saturation);
 
                 Destroy(foodCollider.gameObject);
                 foodCollider = null;
