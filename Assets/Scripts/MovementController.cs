@@ -5,6 +5,7 @@ namespace AnimalPOV
 {
     public class MovementController : MonoBehaviour, IMovementEvents 
     {
+        [SerializeField] private FoodTrigger foodTrigger;
         [SerializeField] private MovementParameters movementParameters;
         [SerializeField] private LayerMask raycastMask;
         [SerializeField] private new Rigidbody rigidbody;
@@ -15,6 +16,11 @@ namespace AnimalPOV
         public event Action Idle;
         public event Action Run;
         public event Action Jump;
+
+        private void Start()
+        {
+            movementParameters.SetModificator(foodTrigger);
+        }
 
         private void Update()
         {
