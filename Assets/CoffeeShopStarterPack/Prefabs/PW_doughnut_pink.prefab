@@ -126,4 +126,4 @@ MonoBehaviour:
   speedModificator: 0.8
   jumpModificator: 1
   duration: 10
-  saturation: -0.1
+  saturation: 0.3

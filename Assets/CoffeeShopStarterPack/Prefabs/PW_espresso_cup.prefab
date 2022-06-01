@@ -243,7 +243,7 @@ MonoBehaviour:
   speedModificator: 1.5
   jumpModificator: 1
   duration: 5
-  saturation: 0.2
+  saturation: 0.3
 --- !u!135 &6281253709397623648
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -255,7 +255,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04449571
+  m_Radius: 0.077437416
   m_Center: {x: 0.00087275263, y: -0.0010077609, z: 0}
 --- !u!1 &1717583032123942
 GameObject:
