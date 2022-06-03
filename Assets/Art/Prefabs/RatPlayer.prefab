@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 392072467}
   - component: {fileID: 4427347418314977449}
   - component: {fileID: 4343719816728337260}
+  - component: {fileID: 3817586503197603996}
   - component: {fileID: 1868480779}
   - component: {fileID: 1868480778}
   - component: {fileID: 1868480780}
@@ -168,6 +169,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 3334015433618553318}
+--- !u!114 &3817586503197603996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8286094245494358130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4291943755569f145972cfa3c3413d19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerLabel: {fileID: 0}
+  slider: {fileID: 0}
+  foodTrigger: {fileID: 4427347418314977449}
 --- !u!54 &1868480779
 Rigidbody:
   m_ObjectHideFlags: 0

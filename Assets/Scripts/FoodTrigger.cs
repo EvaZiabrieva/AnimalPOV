@@ -6,17 +6,18 @@ namespace AnimalPOV
     {
         public float SpeedModificator { get; private set; } = 1f;
         public float JumpModificator { get; private set; } = 1f;
+        public float Saturation { get; private set; } = 0f;
 
         private float timer;
-        private Collider foodCollider;
+        private FoodEffects foodEffects;
 
         private void OnTriggerEnter(Collider other)
         {
-            foodCollider = other;
+            foodEffects = other.GetComponent<FoodEffects>();
         }
         private void OnTriggerExit(Collider other)
         {
-            foodCollider = null;
+            foodEffects = null;
         }
 
         private void Update()
@@ -24,16 +25,16 @@ namespace AnimalPOV
             timer -= Time.deltaTime;
 
             // TODO: move input handling to interface
-            if (foodCollider != null && Input.GetKeyDown(KeyCode.E))
+            if (foodEffects != null && Input.GetKeyDown(KeyCode.E))
             {
-                FoodEffects foodEffects = foodCollider.GetComponent<FoodEffects>();
-
+      
                 SpeedModificator = foodEffects.SpeedModificator;
                 JumpModificator = foodEffects.JumpModificator;
                 timer = foodEffects.Duration;
+                Saturation = Mathf.Clamp01(Saturation + foodEffects.Saturation);
 
-                Destroy(foodCollider.gameObject);
-                foodCollider = null;
+                Destroy(foodEffects.gameObject);
+                foodEffects = null;
             }
 
             if (timer <= 0)
