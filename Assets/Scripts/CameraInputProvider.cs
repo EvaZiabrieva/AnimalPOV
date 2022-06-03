@@ -4,16 +4,15 @@ using UnityEngine;
 
 namespace AnimalPOV
 {
-    public class CameraInputProvider : MonoBehaviour, ICameraInputProvider
+    public class CameraInputProvider : ICameraInputProvider
     {
         public Vector2 GetCameraInput()
         {
-            return Input.mousePosition;
-        }
-
-        private void Update()
-        {
-            Debug.Log(GetCameraInput());
+            float max = 1f;
+            float min = -1f;
+            return new Vector2(
+                Mathf.Lerp(min, max, Input.mousePosition.x/ Screen.width),
+                Mathf.Lerp(min, max, Input.mousePosition.y/ Screen.height));
         }
     }
 }

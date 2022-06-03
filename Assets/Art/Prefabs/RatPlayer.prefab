@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6243683108955875186}
   - component: {fileID: 7562556320546400770}
   - component: {fileID: 3380123159966559938}
-  - component: {fileID: 6815146300324530579}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -84,18 +83,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5419106268765135114}
   m_Enabled: 1
---- !u!114 &6815146300324530579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5419106268765135114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4789cfee9d2a98b419a0feb96e93cafb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8286094245494358130
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerLabel: {fileID: 0}
   slider: {fileID: 0}
+  finishScreen: {fileID: 0}
   foodTrigger: {fileID: 4427347418314977449}
 --- !u!54 &1868480779
 Rigidbody:
