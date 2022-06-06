@@ -75,7 +75,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb6627846ab9e14c94256264cde2b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxRotationAngles: {x: 40, y: 40}
+  maxRotationAngles: {x: 50, y: 20}
 --- !u!1 &5419106268765135114
 GameObject:
   m_ObjectHideFlags: 0
