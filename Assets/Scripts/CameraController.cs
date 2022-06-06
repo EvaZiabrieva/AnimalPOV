@@ -4,14 +4,21 @@ namespace AnimalPOV
 {
     public class CameraController : MonoBehaviour
     {
-        [SerializeField] private CameraInputProvider CameraInputProvider;
-        public Vector2 maxRotationAngles = new Vector2 (50, 20);
+        [SerializeField] private AnimationCurve transformPower;
+        [SerializeField] private Vector2 maxRotationAngles = new Vector2 (50, 20);
         private ICameraInputProvider inputProvider = new CameraInputProvider();
-        void Update()
+        
+        private void Update()
         {
+            Vector2 input = Vector2.ClampMagnitude(inputProvider.GetCameraInput(), 1f);
             transform.localRotation = Quaternion.Euler(
-                -inputProvider.GetCameraInput().y * maxRotationAngles.y,
-                inputProvider.GetCameraInput().x * maxRotationAngles.x, 0);
+                TransformInput(-input.y) * maxRotationAngles.y,
+                TransformInput(input.x) * maxRotationAngles.x, 0);
+        }
+
+        private float TransformInput(float value)
+        {
+            return Mathf.Sign(value) * transformPower.Evaluate(Mathf.Abs(value)); 
         }
     }
 }
