@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace AnimalPOV
 {
-    public class CameraController : MonoBehaviour
+    public class CameraLookController : MonoBehaviour
     {
         [SerializeField] private CameraInputProvider CameraInputProvider;
         public Vector2 maxRotationAngles = new Vector2 (50, 20);
