@@ -1,6 +1,6 @@
 namespace AnimalPOV
 {
-    public interface IInputProvider
+    public interface IMovementInputProvider
     {
         float GetForwardMovement();
         bool IsTryJump();
